@@ -26,5 +26,9 @@
     "TABELA_ALIMENTOS": {
         "QUANTIDADE": "Qtd.",
         "ALIMENTO": "Alimento"
+    },
+    "METAS": {
+        "TITULO": "Minhas metas mensais",
+        "BOTAO_SALVAR": "Salvar metas"
     }
 }

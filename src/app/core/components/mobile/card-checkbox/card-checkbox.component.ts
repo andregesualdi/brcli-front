@@ -12,7 +12,7 @@ export class CardCheckboxComponent implements OnInit {
   public meta: Meta = new Meta();
 
   @Output()
-  public statusMetas: EventEmitter<any>  = new EventEmitter();
+  public statusMetas: EventEmitter<any> = new EventEmitter();
 
   public form: FormGroup | undefined;
 
@@ -21,10 +21,6 @@ export class CardCheckboxComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.meta = {
-      descricao: 'Ir à academia pelo menos 4 vezes por semana', //maximo 64 caracteres;
-      atingida: false
-    };
     this.form = this.formBuilder.group({
       metas: new FormArray([])
     });
