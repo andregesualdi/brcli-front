@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { BotaoComponent } from './core/components/botao/botao.component';
 import { MenuRodapeComponent } from './core/components/mobile/menu-rodape/menu-rodape.component';
 import { CardInformacaoComponent } from './core/components/mobile/card-informacao/card-informacao.component';
+import { TabelaAlimentosComponent } from './core/components/mobile/tabela/tabela-alimentos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BotaoComponent,
     MenuRodapeComponent,
-    CardInformacaoComponent
+    CardInformacaoComponent,
+    TabelaAlimentosComponent
   ],
   imports: [
     BrowserModule,
