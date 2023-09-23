@@ -18,7 +18,7 @@ import { AvaliacaoFisicaComponent } from './core/modules/mobile/pages/avaliacao-
 import { PerfilComponent } from './core/modules/mobile/pages/perfil/perfil.component';
 import { RefeicaoComponent } from './core/modules/mobile/pages/refeicao/refeicao.component';
 import { LoadingComponent } from './core/modules/mobile/pages/loading/loading.component';
-import { ErroComponent } from './core/modules/mobile/pages/erro/erro.component';
+import { ErroComponent } from './core/components/erro/erro.component';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 

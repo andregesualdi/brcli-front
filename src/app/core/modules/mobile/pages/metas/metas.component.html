@@ -1,10 +1,15 @@
 <div class="metas">
-    <h1 class="metas__titulo">{{ 'METAS.TITULO' | translate }}</h1>
-    <div class="metas__listagem" *ngFor="let meta of planoMetas.metas">
-        <app-card-checkbox (statusMetas)="metaAlterada($event)" [meta]="meta"></app-card-checkbox>
+    <div *ngIf="!erro">
+        <h1 class="metas__titulo">{{ 'METAS.TITULO' | translate }}</h1>
+        <div class="metas__listagem" *ngFor="let meta of planoMetas.metas">
+            <app-card-checkbox (statusMetas)="metaAlterada($event)" [meta]="meta"></app-card-checkbox>
+        </div>
+        <div class="metas__botao">
+            <app-botao  (botaoClicado)="salvarMetas()" [desabilitado]="metasNaoAlteradas" [texto]="'METAS.BOTAO_SALVAR' | translate"></app-botao>
+        </div>
     </div>
-    <div class="metas__botao">
-        <app-botao  (botaoClicado)="salvarMetas()" [desabilitado]="metasNaoAlteradas" [texto]="'METAS.BOTAO_SALVAR' | translate"></app-botao>
+    <div class="metas__erro" *ngIf="erro">
+        <app-erro></app-erro>
     </div>
 </div>
 <app-menu-rodape [selecao]="'metas'"></app-menu-rodape>

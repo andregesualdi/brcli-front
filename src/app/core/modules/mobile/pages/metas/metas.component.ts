@@ -10,6 +10,7 @@ import { MockPlanoMetas } from '../../../../../../assets/mocks/mock-plano-metas'
 export class MetasComponent implements OnInit {
   public planoMetas: PlanoMetas = new PlanoMetas;
   public metasNaoAlteradas: boolean = true;
+  public erro: boolean = false;
 
   ngOnInit(): void {
     this.planoMetas = MockPlanoMetas.metas;
