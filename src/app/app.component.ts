@@ -1,33 +1,25 @@
-import { Component } from '@angular/core';
-import { Alimento } from './core/shared/models/alimento.model';
+import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 
-  public alimentos: Alimento[] = [
-    {
-      quantidade: '50g',
-      descricao: 'Ovo'
-    },
-    {
-      quantidade: '200ml',
-      descricao: 'Leite'
-    },
-    {
-      quantidade: '20g',
-      descricao: 'Requeijão Light'
-    }
-  ]
+  constructor(
+    private translate: TranslateService
+  ) { }
 
-  public botaoTeste(): void {
-    console.log('Funcionei!');
+  ngOnInit(): void {
+    this.iniciarI18n();
   }
 
-  public salvarMetas(event: any): void {
-    console.log(event);
+  private iniciarI18n(): void {
+    this.translate.setDefaultLang('pt');
+    this.translate.use('pt').subscribe({
+      error: () => console.log('Erro configuração i18n') // Modificar quando tela de erro for implementada.
+    });
   }
 }

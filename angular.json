@@ -93,8 +93,13 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "./src/styles.scss"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "./src/app/styles"
+              ]
+            },
             "scripts": []
           }
         }
