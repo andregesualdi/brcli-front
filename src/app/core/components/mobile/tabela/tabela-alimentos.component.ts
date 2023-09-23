@@ -8,5 +8,5 @@ import { Alimento } from '../../../shared/models/alimento.model';
 })
 export class TabelaAlimentosComponent {
   @Input()
-  public alimentos: Array<Alimento> = new Array<Alimento>();
+  public alimentos: Array<Alimento> | undefined;
 }

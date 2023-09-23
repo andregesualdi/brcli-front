@@ -24,7 +24,7 @@ export class PlanoAlimentarComponent implements OnInit {
   public abrirRefeicao(refeicao: Refeicao): void {
     this.router.navigate(['plano-alimentar/refeicao', refeicao.tipo], {
       state: {
-        alimentos: refeicao.alimentos
+        alimentos: refeicao
       }
     });
   }

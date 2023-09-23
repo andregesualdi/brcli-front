@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { RefeicaoUtils } from 'src/app/core/shared/utils/refeicao.utils';
 
 @Component({
   selector: 'app-card-informacao',
@@ -26,28 +27,6 @@ export class CardInformacaoComponent {
   }
 
   get getTipoRefeicao(): string {
-    switch (this.imagem) {
-      case 'cafe':
-        return 'PLANO_ALIMENTAR.CAFE';
-        break;
-      case 'lanchemanha':
-        return 'PLANO_ALIMENTAR.LANCHEMANHA';
-        break;
-      case 'almoco':
-        return 'PLANO_ALIMENTAR.ALMOCO';
-        break;
-      case 'lanchetarde':
-        return 'PLANO_ALIMENTAR.LANCHETARDE';
-        break;
-      case 'janta':
-        return 'PLANO_ALIMENTAR.JANTA';
-        break;
-      case 'ceia':
-        return 'PLANO_ALIMENTAR.CEI';
-        break;
-      default:
-        return '';
-        break;
-    }
+    return RefeicaoUtils.getChaveRefeicao(this.imagem);
   }
 }

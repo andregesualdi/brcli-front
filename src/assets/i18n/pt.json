@@ -15,9 +15,16 @@
         "LANCHEMANHA": "Lanche da manhã",
         "ALMOCO": "Almoço",
         "LANCHETARDE": "Lanche da tarde",
-        "JANTA": "Janta",
+        "JANTAR": "Jantar",
         "CEIA": "Ceia",
         "HORARIO_PREVISTO": "Horário previsto: ",
-        "BOTAO_BAIXAR": "Baixar plano"
+        "BOTAO_BAIXAR": "Baixar plano",
+        "MEU": "Meu",
+        "MINHA": "Minha",
+        "VOLTAR": "Voltar"
+    },
+    "TABELA_ALIMENTOS": {
+        "QUANTIDADE": "Qtd.",
+        "ALIMENTO": "Alimento"
     }
 }

@@ -64,7 +64,7 @@ export class MockPlanoAlimentar {
             ]
           },
           {
-            tipo: 'janta',
+            tipo: 'jantar',
             horario: '20h',
             alimentos: [
               {
@@ -89,6 +89,16 @@ export class MockPlanoAlimentar {
               }
             ]
           },
+          {
+            tipo: 'ceia',
+            horario: '23h',
+            alimentos: [
+              {
+                quantidade: '100ml',
+                descricao: 'Chá de Camomila'
+              },
+            ]
+          }
         ]
       }
 }
