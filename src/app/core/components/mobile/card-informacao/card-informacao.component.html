@@ -12,7 +12,7 @@
     <div class="card-informativo__texto">
         <div *ngIf="direcionador; else informativo">
             <div class="card-informativo__texto--titulo">
-                {{ titulo }}
+                {{ getTipoRefeicao | translate }}
             </div>
             <div class="card-informativo__texto--descricao">
                 {{ descricao }}

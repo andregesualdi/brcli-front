@@ -53,6 +53,12 @@ export class MenuRodapeComponent implements OnInit {
         this.perfilSelecionado = true;
         this.router.navigate(['perfil']);
         break;
+      case 'refeicao':
+        this.planoSelecionado = true;
+        this.metasSelecionado = false;
+        this.avaliacaoSelecionado = false;
+        this.perfilSelecionado = false;
+        break;
     }
   }
 }
