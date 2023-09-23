@@ -21,6 +21,8 @@
     <app-card-informacao [imagem]="'ceia'"></app-card-informacao>
     <div style="margin-top: 8.889vw; margin-bottom: 8.889vw;"></div>
     <app-tabela-alimentos [alimentos]="alimentos"></app-tabela-alimentos>
+    <div style="margin-top: 8.889vw; margin-bottom: 8.889vw;"></div>
+    <app-card-checkbox (statusMetas)="salvarMetas($event)"></app-card-checkbox>
 </div>
 <div style="margin-top: 8.889vw; margin-bottom: 28.889vw;"></div>
 <app-menu-rodape></app-menu-rodape>

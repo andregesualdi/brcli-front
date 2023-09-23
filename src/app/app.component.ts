@@ -26,4 +26,8 @@ export class AppComponent {
   public botaoTeste(): void {
     console.log('Funcionei!');
   }
+
+  public salvarMetas(event: any): void {
+    console.log(event);
+  }
 }
