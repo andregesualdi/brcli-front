@@ -30,5 +30,11 @@
     "METAS": {
         "TITULO": "Minhas metas mensais",
         "BOTAO_SALVAR": "Salvar metas"
+    },
+    "PERFIL": {
+        "TITULO": "Meu perfil",
+        "TITULO_NUTRICIONISTA": "Nutricionista",
+        "BOTAO_SAIR": "Sair do aplicativo",
+        "ALTURA": "Altura: "
     }
 }
