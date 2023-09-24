@@ -21,6 +21,10 @@ import { LoadingComponent } from './core/components/mobile/loading/loading.compo
 import { ErroComponent } from './core/components/erro/erro.component';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { LoginComponent } from './core/modules/mobile/pages/login/login.component';
+import { EsqueciSenhaComponent } from './core/modules/mobile/pages/esqueci-senha/esqueci-senha.component';
+import { PrimeiroAcessoComponent } from './core/modules/mobile/pages/primeiro-acesso/primeiro-acesso.component';
+import { InputTextoComponent } from './core/components/mobile/input-texto/input-texto.component';
 
 registerLocaleData(ptBr);
 
@@ -38,7 +42,11 @@ registerLocaleData(ptBr);
     PerfilComponent,
     RefeicaoComponent,
     LoadingComponent,
-    ErroComponent
+    ErroComponent,
+    LoginComponent,
+    EsqueciSenhaComponent,
+    PrimeiroAcessoComponent,
+    InputTextoComponent
   ],
   imports: [
     BrowserModule,
