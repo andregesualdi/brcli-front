@@ -9,6 +9,9 @@ export class InputTextoComponent {
   @Input()
   public placeholder: string = '';
 
+  @Input()
+  public tipo: string = 'text';
+
   @Output()
   public valorDigitado: EventEmitter<string> = new EventEmitter();
 

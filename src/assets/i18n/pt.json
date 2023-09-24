@@ -36,5 +36,12 @@
         "TITULO_NUTRICIONISTA": "Nutricionista",
         "BOTAO_SAIR": "Sair do aplicativo",
         "ALTURA": "Altura: "
+    },
+    "LOGIN": {
+        "LOGIN": "Login",
+        "SENHA": "Senha",
+        "ESQUECEU_SENHA": "Esqueceu sua senha?",
+        "ACESSAR": "Acessar",
+        "PRIMEIRO_ACESSO": "Primeiro acesso"
     }
 }

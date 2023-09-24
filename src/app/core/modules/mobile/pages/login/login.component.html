@@ -1,1 +1,11 @@
-<app-input-texto placeholder="Login" (valorDigitado)="recuperarLogin($event)"></app-input-texto>
+<div class="login">
+    <img class="login__logo" src="../../../../../../assets/images/logo_broccoli.svg" />
+    <div class="login__card">
+        <img class="login__card--nome" src="../../../../../../assets/images/nome_broccoli.svg" />
+        <app-input-texto class="login__card--login" [placeholder]="'LOGIN.LOGIN' | translate " (valorDigitado)="recuperarLogin($event)"></app-input-texto>
+        <app-input-texto class="login__card--senha" tipo="password" [placeholder]="'LOGIN.SENHA' | translate " (valorDigitado)="recuperarSenha($event)"></app-input-texto>
+        <a class="login__card--esqueceu-senha">{{ 'LOGIN.ESQUECEU_SENHA' | translate  }}</a>
+        <app-botao class="login__card--botao" [desabilitado]="desabilitado" tipoBotao="flutuante-mobile" [texto]="'LOGIN.ACESSAR' | translate "></app-botao>
+        <a class="login__card--primeiro-acesso">{{ 'LOGIN.PRIMEIRO_ACESSO' | translate  }}</a>
+    </div>
+</div>
