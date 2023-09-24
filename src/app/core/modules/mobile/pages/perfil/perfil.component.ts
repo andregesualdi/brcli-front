@@ -30,14 +30,12 @@ export class PerfilComponent implements OnInit {
       if (!tiposPermitidos.includes(files[0].type)) {
         alert('Tipo de arquivo não permitido');
       } else if (Math.round(files[0].size / 1024) > 2048) {
-        console.log(Math.round(files[0].size / 1024));
         alert('Arquivo muito grande');
       } else {
         const reader = new FileReader();
         reader.readAsDataURL(files[0]);
         reader.onload = () => {
           this.arquivo = String(reader.result);
-          console.log(this.arquivo);
         }
         this.resetInput();   
       }
