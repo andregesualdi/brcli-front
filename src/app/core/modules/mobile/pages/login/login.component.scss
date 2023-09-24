@@ -27,9 +27,11 @@
         flex-direction: column;
         flex-wrap: nowrap;
         align-content: center;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
         width: 100%;
+        min-height: 103.333vw;
+        max-height: 103.333vw;
 
         &--nome {
             padding-bottom: 8.889vw;

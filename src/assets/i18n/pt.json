@@ -6,6 +6,7 @@
     },
     "ERRO": {
         "TEXTO": "Não é possível exibir essas informações no momento. Por favor, tente mais tarde.",
+        "ERRO_NUTRICIONISTA": "Que bom te ver por aqui, nutricionista. No momento, este acesso é apenas para pacientes. Por favor, acesse o Broccoli através do site.",
         "BOTAO_OK": "Ok"
     },
     "PLANO_ALIMENTAR": {
@@ -43,5 +44,21 @@
         "ESQUECEU_SENHA": "Esqueceu sua senha?",
         "ACESSAR": "Acessar",
         "PRIMEIRO_ACESSO": "Primeiro acesso"
+    },
+    "PRIMEIRO_ACESSO": {
+        "DESCRICAO": "Informe o código de acesso fornecido pelo seu nutricionista",
+        "CODIGO_ACESSO": "Código de acesso",
+        "VALIDAR": "Validar",
+        "FINALIZE": "Finalize seu cadastro",
+        "NOME_USUARIO": "Nome de usuário",
+        "SENHA": "Senha",
+        "CADASTRAR": "Cadastrar"
+    },
+    "RECUPERAR_SENHA": {
+        "DESCRICAO": "Informe seu usuário",
+        "NOME_USUARIO": "Nome de usuário",
+        "RECUPERAR": "Recuperar senha",
+        "INFOS_ENVIADAS": "As informações para recuperar sua senha foram encaminhadas para o seu e-mail. Verifique sua caixa de entrada ou spam.",
+        "BOTAO_OK": "Ok"
     }
 }
