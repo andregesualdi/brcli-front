@@ -1,5 +1,10 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AcessoService } from '../../../../services/acesso.service';
+import { RequisicaoCodigo } from '../../../../shared/models/requisicao-codigo.model';
+import { CodigoValidado } from '../../../../shared/models/codigo-validado.model';
+import { CadastrarPaciente } from '../../../../shared/models/cadastrar-paciente.model';
+import { Cadastro } from '../../../../shared/models/cadastro.model';
 
 @Component({
   selector: 'app-primeiro-acesso',
@@ -8,6 +13,9 @@ import { Router } from '@angular/router';
 })
 export class PrimeiroAcessoComponent {
   public codigoValido: boolean = false;
+  public erroCodigoInvalido: boolean = false;
+  public erro: boolean = false;
+  public loading: boolean = false;
   public validarDesabilitado: boolean = true;
   public cadastrarDesabilitado: boolean = true;
   public codigoCadastro: string = '';
@@ -15,7 +23,8 @@ export class PrimeiroAcessoComponent {
   public senhaUsuario: string = '';
 
   constructor(
-    private router: Router
+    private router: Router,
+    private acessoService: AcessoService
   ) { }
 
   public recuperarLogin(event: any): void {
@@ -34,16 +43,50 @@ export class PrimeiroAcessoComponent {
   }
 
   public validarCodigo(): void {
-    this.codigoValido = true;
+    const req: RequisicaoCodigo = {
+      codigoCadastro: this.codigoCadastro
+    };
+    this.acessoService.validarCodigo(req).subscribe(
+      {
+        next: (data: CodigoValidado) => {
+          if (data.valido) {
+            this.codigoValido = true;
+          } else {
+            this.codigoValido = false;
+            this.erroCodigoInvalido = true;
+          }
+        },
+        error: () => {
+          this.erro = true;
+        }
+      }
+    );
   }
 
   public cadastrar(): void {
-    this.router.navigate(['']);
+    const req: CadastrarPaciente = {
+      codigo: this.codigoCadastro,
+      usuario: this.loginUsuario,
+      senha: this.senhaUsuario
+    };
+    this.acessoService.cadastrar(req).subscribe(
+      {
+        next: (data: Cadastro) => {
+          if (data.valido) {
+            this.router.navigate(['']);
+          } else {
+            this.erro = true;
+          }
+        },
+        error: () => {
+          this.erro = true;
+        }
+      }
+    );
   }
   
   private validarCampoCodigo(): void {
     if (this.codigoCadastro && this.codigoCadastro !== '') {
-      console.log(this.codigoCadastro);
       this.validarDesabilitado = false;
     } else {
       this.validarDesabilitado = true;
@@ -53,8 +96,6 @@ export class PrimeiroAcessoComponent {
   private validarCamposCadastro(): void {
     if (this.loginUsuario && this.loginUsuario !== ''
       && this.senhaUsuario && this.senhaUsuario !== '') {
-      console.log(this.loginUsuario);
-      console.log(this.senhaUsuario);
       this.cadastrarDesabilitado = false;
     } else {
       this.cadastrarDesabilitado = true;

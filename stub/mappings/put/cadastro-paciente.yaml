@@ -1,5 +1,5 @@
 - request:
-    method: POST
+    method: PUT
     url: /brcli-gateway/brcli-bff-mobile/cadastro-paciente
   response:
     status: 200

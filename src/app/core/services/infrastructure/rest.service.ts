@@ -25,7 +25,7 @@ export class RestService {
   }
 
   public put(path: string, body: any, headers?: HttpHeaders): Observable<any> {
-    return this.httpClient.put(path, body, {
+    return this.httpClient.put(`${environment.api.context}${path}`, body, {
       headers: headers
     });
   }
