@@ -3,11 +3,10 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "watch": "ng build --watch --configuration development",
+    "start": "ng serve --host 0.0.0.0 --configuration=production",
+    "build": "ng build --build-optimizer=true --aot=true --vendor-chunk=true --configuration=production",
     "test": "ng test",
-    "start:local": "ng serve --host 0.0.0.0",
+    "start:local": "ng serve --host 0.0.0.0 --configuration=local --disable-host-check",
     "stub": "stubmatic -v -d stub"
   },
   "private": true,
