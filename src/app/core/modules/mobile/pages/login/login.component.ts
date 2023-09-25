@@ -45,6 +45,7 @@ export class LoginComponent {
         next: (data: Login) => {
         if (data.authorized) {
           if (data.userType === "paciente") {
+            window.sessionStorage.setItem('usuario', this.login); // Melhorar este ponto, acesso perigoso, analisar outras formas
             this.router.navigate(['plano-alimentar']);
           } else if (data.userType === "nutricionista") {
             this.nutricionista = true;

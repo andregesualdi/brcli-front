@@ -2,6 +2,7 @@
     method: GET
     url: /brcli-gateway/brcli-bff-mobile/plano-alimentar
   response:
+    latency: 3000,
     status: 200
     headers:
       content-type: application/json
