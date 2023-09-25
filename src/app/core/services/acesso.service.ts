@@ -9,6 +9,8 @@ import { RequisicaoCodigo } from '../shared/models/requisicao-codigo.model';
 import { CodigoValidado } from '../shared/models/codigo-validado.model';
 import { CadastrarPaciente } from '../shared/models/cadastrar-paciente.model';
 import { Cadastro } from '../shared/models/cadastro.model';
+import { RecuperarSenha } from '../shared/models/recuperar-senha.model';
+import { EmailEnviado } from '../shared/models/email-enviado.model';
 
 @Injectable({
   providedIn: 'root'
@@ -33,6 +35,12 @@ export class AcessoService {
 
   public cadastrar(req: CadastrarPaciente): Observable<Cadastro> {
     return this.rest.put(environment.api.endpoints.cadastroPaciente,
+      req,
+      new HttpHeaders().set('Content-type', 'application/json'));
+  }
+
+  public recuperarSenha(req: RecuperarSenha): Observable<EmailEnviado> {
+    return this.rest.post(environment.api.endpoints.recuperarSenha,
       req,
       new HttpHeaders().set('Content-type', 'application/json'));
   }

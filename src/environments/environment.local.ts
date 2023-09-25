@@ -13,7 +13,7 @@ export const environment = {
             metas: '/metas',
             planoAlimentar: '/plano-alimentar',
             primeiroAcesso: '/primeiro-acesso',
-            recuperarSenha: '/recupear-senha',
+            recuperarSenha: '/recuperar-senha',
             salvarMetas: '/salvar-metas'
         }
     }

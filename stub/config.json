@@ -17,6 +17,7 @@
             "mappings/put/cadastro-paciente.yaml",
             "mappings/post/login.yaml",
             "mappings/post/primeiro-acesso.yaml",
+            "mappings/post/recuperar-senha.yaml",
             "mappings/put/alterar-imagem.yaml",
             "mappings/put/salvar-metas.yaml"
         ]
