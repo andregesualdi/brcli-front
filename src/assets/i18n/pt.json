@@ -30,7 +30,9 @@
     },
     "METAS": {
         "TITULO": "Minhas metas mensais",
-        "BOTAO_SALVAR": "Salvar metas"
+        "BOTAO_SALVAR": "Salvar metas",
+        "METAS_SALVAS": "Metas salvas",
+        "ERRO_AO_SALVAR": "Erro ao salvar metas, tente novamente."
     },
     "PERFIL": {
         "TITULO": "Meu perfil",

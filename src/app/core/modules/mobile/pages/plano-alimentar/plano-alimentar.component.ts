@@ -34,7 +34,6 @@ export class PlanoAlimentarComponent implements OnInit {
 
   private recuperarPlano(): void {
     const usuario: string = String(window.sessionStorage.getItem('usuario')); // Melhorar acesso, muito perigoso
-    console.log(usuario);
     if (usuario === '' || usuario === 'null' || usuario === 'undefined') {
       this.loading = false;
       this.erro = true;
@@ -44,12 +43,13 @@ export class PlanoAlimentarComponent implements OnInit {
           next: (data: PlanoAlimentar) => {
             if (data) {
               this.planoAlimentar = data;
-              this.loading = false;
             } else {
               this.erro = true;
             }
+            this.loading = false;
           },
           error: () => {
+            this.loading = false;
             this.erro = true;
           }
         }
