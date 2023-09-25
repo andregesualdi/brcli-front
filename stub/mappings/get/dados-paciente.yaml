@@ -1,0 +1,8 @@
+- request:
+    method: GET
+    url: /brcli-gateway/brcli-bff-mobile/dados-paciente
+  response:
+    status: 200
+    headers:
+      content-type: application/json
+    file: '../../mocks/dados-paciente.json'

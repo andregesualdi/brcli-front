@@ -1,0 +1,8 @@
+- request:
+    method: POST
+    url: /brcli-gateway/brcli-bff-mobile/recuperar-senha
+  response:
+    status: 200
+    headers:
+      content-type: application/json
+    file: '../../mocks/recuperar-senha.json'

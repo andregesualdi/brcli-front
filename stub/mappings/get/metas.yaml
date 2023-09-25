@@ -1,0 +1,8 @@
+- request:
+    method: GET
+    url: /brcli-gateway/brcli-bff-mobile/metas
+  response:
+    status: 200
+    headers:
+      content-type: application/json
+    file: '../../mocks/metas.json'

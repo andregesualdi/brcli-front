@@ -1,0 +1,8 @@
+- request:
+    method: PUT
+    url: /brcli-gateway/brcli-bff-mobile/salvar-metas
+  response:
+    status: 200
+    headers:
+      content-type: application/json
+    file: '../../mocks/salvar-metas.json'

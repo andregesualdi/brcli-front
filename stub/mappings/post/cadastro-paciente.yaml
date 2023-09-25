@@ -1,0 +1,8 @@
+- request:
+    method: POST
+    url: /brcli-gateway/brcli-bff-mobile/cadastro-paciente
+  response:
+    status: 200
+    headers:
+      content-type: application/json
+    file: '../../mocks/cadastro-paciente.json'

@@ -2,8 +2,6 @@ import { PlanoAlimentar } from "src/app/core/shared/models/plano-alimentar.model
 
 export class MockPlanoAlimentar {
     public static planoAlimentar: PlanoAlimentar = {
-        id: 111,
-        data: new Date(),
         refeicoes: [
           {
             tipo: 'cafe',
