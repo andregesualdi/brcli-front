@@ -1,0 +1,8 @@
+- request:
+    method: PUT
+    url: /brcli-gateway/brcli-bff-mobile/alterar-imagem
+  response:
+    status: 200
+    headers:
+      content-type: application/json
+    file: '../../mocks/alterar-imagem.json'

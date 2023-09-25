@@ -1,0 +1,8 @@
+- request:
+    method: POST
+    url: /brcli-gateway/brcli-bff-mobile/primeiro-acesso
+  response:
+    status: 200
+    headers:
+      content-type: application/json
+    file: '../../mocks/primeiro-acesso.json'

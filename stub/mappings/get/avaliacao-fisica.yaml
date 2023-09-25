@@ -1,0 +1,8 @@
+- request:
+    method: GET
+    url: /brcli-gateway/brcli-bff-mobile/avaliacao-fisica
+  response:
+    status: 200
+    headers:
+      content-type: application/json
+    file: '../../mocks/avaliacao-fisica.json'
