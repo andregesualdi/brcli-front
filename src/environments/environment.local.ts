@@ -3,7 +3,7 @@ export const environment = {
     verbose: true,
 
     api: {
-        context: 'http://localhost:4100/brcli-gateway/brcli-bff-mobile',
+        context: '/brcli-gateway/brcli-bff-mobile',
         endpoints: {
             alterarImagem: '/alterar-imagem',
             avaliacaoFisica: '/avaliacao-fisica',

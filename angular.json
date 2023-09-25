@@ -79,7 +79,8 @@
               "browserTarget": "broccoli-user-front:build:production"
             },
             "local": {
-              "browserTarget": "broccoli-user-front:build:local"
+              "browserTarget": "broccoli-user-front:build:local",
+              "proxyConfig": "src/proxy.conf.json"
             }
           },
           "defaultConfiguration": "local"
