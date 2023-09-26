@@ -43,6 +43,7 @@ export class PrimeiroAcessoComponent {
   }
 
   public validarCodigo(): void {
+    this.loading = true;
     const req: RequisicaoCodigo = {
       codigoCadastro: this.codigoCadastro
     };
@@ -55,15 +56,18 @@ export class PrimeiroAcessoComponent {
             this.codigoValido = false;
             this.erroCodigoInvalido = true;
           }
+          this.loading = false;
         },
         error: () => {
           this.erro = true;
+          this.loading = false;
         }
       }
     );
   }
 
   public cadastrar(): void {
+    this.loading = true;
     const req: CadastrarPaciente = {
       codigo: this.codigoCadastro,
       usuario: this.loginUsuario,
@@ -73,16 +77,24 @@ export class PrimeiroAcessoComponent {
       {
         next: (data: Cadastro) => {
           if (data.valido) {
+            this.loading = false;
             this.router.navigate(['']);
+            alert('Cadastro realizado');
           } else {
+            this.loading = false;
             this.erro = true;
           }
         },
         error: () => {
+          this.loading = false;
           this.erro = true;
         }
       }
     );
+  }
+
+  public voltar(): void {
+    this.router.navigate(['']);
   }
   
   private validarCampoCodigo(): void {

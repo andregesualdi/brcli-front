@@ -28,6 +28,10 @@
         min-height: 103.333vw;
         max-height: 103.333vw;
 
+        &--loading {
+            justify-content: center;
+        }
+
         &--nome {
             padding-bottom: 6.667vw;
         }
