@@ -6,6 +6,7 @@ import { environment } from '../../../environments/environment';
 import { HttpHeaders } from '@angular/common/http';
 import { PlanoMetas } from '../shared/models/plano-metas.model';
 import { SalvarMetasResponse } from '../shared/models/salvar-metas-response.model';
+import { AvaliacaoFisica } from '../shared/models/avaliacao.model';
 
 @Injectable({
   providedIn: 'root'
@@ -38,5 +39,14 @@ export class DadosService {
     return this.rest.put(environment.api.endpoints.salvarMetas,
       metas,
       new HttpHeaders().set('Content-type', 'application/json'));
+  }
+
+  public recuperarAvaliacao(usuario: string): Observable<AvaliacaoFisica> {
+    const headers = new HttpHeaders().set(
+      'Content-type', 'application/json'
+    );
+    headers.append('x-usuario', usuario);
+    return this.rest.get(environment.api.endpoints.avaliacaoFisica,
+      headers);
   }
 }
