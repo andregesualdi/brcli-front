@@ -32,6 +32,7 @@ export class EsqueciSenhaComponent {
   }
 
   public recuperarSenha(): void {
+    this.loading = true;
     const req: RecuperarSenha = {
       usuario: this.login
     };
@@ -44,8 +45,10 @@ export class EsqueciSenhaComponent {
             this.emailEnviado = false;
             this.erro = true;
           }
+          this.loading = false;
         },
         error: () => {
+          this.loading = false;
           this.emailEnviado = false;
           this.erro = true;
         }
