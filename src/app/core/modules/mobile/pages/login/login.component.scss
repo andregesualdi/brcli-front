@@ -33,6 +33,29 @@
         min-height: 103.333vw;
         max-height: 103.333vw;
 
+        &--loading {
+            justify-content: center;
+        }
+
+        &--alerta {
+            text-indent: -9999vw;
+            color: $cor-card-login;
+        }
+
+        &--alerta-ativo {
+            background-color: $cor-vermelho;
+            width: 100%;
+            color: $cor-branco-padrao;
+            text-align: center;
+            font-family: 'Manrope-Bold';
+            text-indent: 0vw;
+        }
+
+        &--descricao {
+            text-align: center;
+            font-family: 'Manrope-Medium';
+        }
+
         &--nome {
             padding-bottom: 8.889vw;
         }
@@ -44,7 +67,7 @@
 
         &--esqueceu-senha {
             align-self: flex-start;
-            padding-bottom: 17.778vw;
+            padding-bottom: 4.444vw;
             font-size: 3.333vw;
         }
 

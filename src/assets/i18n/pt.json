@@ -45,7 +45,8 @@
         "SENHA": "Senha",
         "ESQUECEU_SENHA": "Esqueceu sua senha?",
         "ACESSAR": "Acessar",
-        "PRIMEIRO_ACESSO": "Primeiro acesso"
+        "PRIMEIRO_ACESSO": "Primeiro acesso",
+        "INVALIDO": "Usuário ou senha inválidos"
     },
     "PRIMEIRO_ACESSO": {
         "DESCRICAO": "Informe o código de acesso fornecido pelo seu nutricionista",

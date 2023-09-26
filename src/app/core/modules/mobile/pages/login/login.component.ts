@@ -34,7 +34,14 @@ export class LoginComponent {
     this.validarCampos();
   }
 
+  public avisoUsuarioInvalido(): void {
+    setTimeout(() => {
+      this.usuarioInvalido = false;
+    }, 3000);
+  }
+
   public acessarApp(): void {
+    this.loading = true;
     const req: RequisicaoLogin = {
       usuario: this.login,
       senha: this.senha
@@ -46,21 +53,31 @@ export class LoginComponent {
         if (data.authorized) {
           if (data.userType === "paciente") {
             window.sessionStorage.setItem('usuario', this.login); // Melhorar este ponto, acesso perigoso, analisar outras formas
+            this.loading = false;
             this.router.navigate(['plano-alimentar']);
           } else if (data.userType === "nutricionista") {
             this.nutricionista = true;
           } else {
             this.usuarioInvalido = true;
+            this.avisoUsuarioInvalido();
           }
+          this.loading = false;
         } else {
           this.usuarioInvalido = true;
+          this.loading = false;
+          this.avisoUsuarioInvalido();
         }
         },
         error: () => {
-          this.erro = true
+          this.erro = true;
+          this.loading = false;
         }
       }
     );
+  }
+
+  public redirecionarLogin(): void {
+    window.location.reload();
   }
 
   public esqueceuSenha(): void {
