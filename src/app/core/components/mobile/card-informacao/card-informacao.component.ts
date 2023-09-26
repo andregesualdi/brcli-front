@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { RefeicaoUtils } from 'src/app/core/shared/utils/refeicao.utils';
+import { RefeicaoUtils } from '../../../shared/utils/refeicao.utils';
 
 @Component({
   selector: 'app-card-informacao',

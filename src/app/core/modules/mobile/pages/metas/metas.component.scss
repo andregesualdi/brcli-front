@@ -1,3 +1,5 @@
+@import '../../../../../styles/base-import';
+
 .metas {
     padding: 6.667vw 8.889vw 28.889vw 8.889vw;
 
@@ -14,5 +16,23 @@
 
     &__botao {
         padding-top: 4.444vw;
+    }
+
+    &__aviso-sucesso {
+        background-color: $cor-verde-padrao;
+        width: 100%;
+        color: $cor-branco-padrao;
+        margin-top: 4.444vw;
+        text-align: center;
+        font-family: 'Manrope-Bold';
+    }
+
+    &__aviso-erro {
+        background-color: $cor-vermelho;
+        width: 100%;
+        color: $cor-branco-padrao;
+        margin-top: 4.444vw;
+        text-align: center;
+        font-family: 'Manrope-Bold';
     }
 }

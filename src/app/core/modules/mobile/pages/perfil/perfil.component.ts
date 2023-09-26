@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Paciente } from '../../../../shared/models/paciente.model';
-import { MockPaciente } from '../../../../../../assets/mocks/mock-paciente';
+import { DadosService } from '../../../../services/dados.service';
+import { ImagemSalva } from '../../../../shared/models/imagem-salva.model';
 
 @Component({
   selector: 'app-perfil',
@@ -10,16 +11,17 @@ import { MockPaciente } from '../../../../../../assets/mocks/mock-paciente';
 })
 export class PerfilComponent implements OnInit {
   public arquivo: string | undefined;
-
+  public loading: boolean = false;
+  public erro: boolean = false;
   public paciente: Paciente  | undefined
 
   constructor(
-    private router: Router
+    private router: Router,
+    private dados: DadosService
   ) { }
 
   ngOnInit(): void {
-    this.paciente = MockPaciente.paciente;
-    this.arquivo = this.paciente.imagem;
+    this.recuperarDadosPaciente();
   }
 
   public onFileChange(event: any): void {
@@ -36,6 +38,7 @@ export class PerfilComponent implements OnInit {
         reader.readAsDataURL(files[0]);
         reader.onload = () => {
           this.arquivo = String(reader.result);
+          this.salvarImagem();
         }
         this.resetInput();   
       }
@@ -52,5 +55,57 @@ export class PerfilComponent implements OnInit {
 
   public sair(): void {
     this.router.navigate(['']);
+  }
+
+  private recuperarDadosPaciente(): void {
+    this.loading = true;
+    const usuario: string = String(window.sessionStorage.getItem('usuario')); // Melhorar acesso, muito perigoso
+    if (usuario === '' || usuario === 'null' || usuario === 'undefined') {
+      this.loading = false;
+      this.erro = true;
+    } else {
+      this.dados.recuperarDadosPaciente(usuario).subscribe(
+        {
+          next: (data: Paciente) => {
+            if (data) {
+              this.paciente = data;
+              this.arquivo = data.imagem;
+            } else {
+              this.erro = true;
+            }
+            this.loading = false;
+          },
+          error: () => {
+            this.erro = true;
+            this.loading = false;
+          }
+        }
+      )
+    }
+  }
+
+  private salvarImagem(): void {
+    this.loading = true;
+    this.paciente!.imagem = this.arquivo;
+    this.dados.salvarImagemPaciente(this.paciente as Paciente).subscribe(
+      {
+        next: (data: ImagemSalva) => {
+          if (data && data.imagemSalva) {
+            this.loading = false;
+          } else {
+            this.arquivo = '';
+            this.paciente!.imagem = '';
+            this.loading = false
+            alert('Não foi possível salvar a imagem');
+          }
+        },
+        error: () => {
+          this.arquivo = '';
+          this.paciente!.imagem = '';
+          this.loading = false;
+          alert('Não foi possível salvar a imagem');
+        }
+      }
+    )
   }
 }

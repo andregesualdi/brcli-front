@@ -30,7 +30,9 @@
     },
     "METAS": {
         "TITULO": "Minhas metas mensais",
-        "BOTAO_SALVAR": "Salvar metas"
+        "BOTAO_SALVAR": "Salvar metas",
+        "METAS_SALVAS": "Metas salvas",
+        "ERRO_AO_SALVAR": "Erro ao salvar metas, tente novamente."
     },
     "PERFIL": {
         "TITULO": "Meu perfil",
@@ -43,7 +45,8 @@
         "SENHA": "Senha",
         "ESQUECEU_SENHA": "Esqueceu sua senha?",
         "ACESSAR": "Acessar",
-        "PRIMEIRO_ACESSO": "Primeiro acesso"
+        "PRIMEIRO_ACESSO": "Primeiro acesso",
+        "INVALIDO": "Usuário ou senha inválidos"
     },
     "PRIMEIRO_ACESSO": {
         "DESCRICAO": "Informe o código de acesso fornecido pelo seu nutricionista",
@@ -58,7 +61,7 @@
         "DESCRICAO": "Informe seu usuário",
         "NOME_USUARIO": "Nome de usuário",
         "RECUPERAR": "Recuperar senha",
-        "INFOS_ENVIADAS": "As informações para recuperar sua senha foram encaminhadas para o seu e-mail. Verifique sua caixa de entrada ou spam.",
+        "INFOS_ENVIADAS": "As informações para recuperar sua senha foram encaminhadas para o seu e-mail caso este seja um usuário válido. Verifique sua caixa de entrada ou spam.",
         "BOTAO_OK": "Ok"
     }
 }

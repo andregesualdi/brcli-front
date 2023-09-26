@@ -2,6 +2,7 @@
     method: PUT
     url: /brcli-gateway/brcli-bff-mobile/salvar-metas
   response:
+    latency: 4000
     status: 200
     headers:
       content-type: application/json

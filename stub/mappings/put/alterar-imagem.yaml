@@ -2,6 +2,7 @@
     method: PUT
     url: /brcli-gateway/brcli-bff-mobile/alterar-imagem
   response:
+    latency: 2500
     status: 200
     headers:
       content-type: application/json
