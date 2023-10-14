@@ -1,6 +1,6 @@
 - request:
     method: GET
-    url: /brcli-gateway/brcli-bff-mobile/metas
+    url: /brcli-gateway/api/mobile/metas
   response:
     latency: 3000
     status: 200

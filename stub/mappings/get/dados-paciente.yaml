@@ -1,6 +1,6 @@
 - request:
     method: GET
-    url: /brcli-gateway/brcli-bff-mobile/dados-paciente
+    url: /brcli-gateway/api/mobile/paciente
   response:
     latency: 2000
     status: 200

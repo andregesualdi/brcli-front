@@ -1,6 +1,6 @@
 - request:
     method: PUT
-    url: /brcli-gateway/brcli-bff-mobile/alterar-imagem
+    url: /brcli-gateway/api/mobile/paciente
   response:
     latency: 2500
     status: 200

@@ -1,6 +1,6 @@
 - request:
     method: GET
-    url: /brcli-gateway/brcli-bff-mobile/avaliacao-fisica
+    url: /brcli-gateway/api/mobile/avaliacao
   response:
     latency: 3000
     status: 200

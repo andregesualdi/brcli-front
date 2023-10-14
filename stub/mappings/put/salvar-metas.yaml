@@ -1,6 +1,6 @@
 - request:
     method: PUT
-    url: /brcli-gateway/brcli-bff-mobile/salvar-metas
+    url: /brcli-gateway/api/mobile/metas
   response:
     latency: 4000
     status: 200

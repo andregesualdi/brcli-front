@@ -1,6 +1,6 @@
 - request:
     method: POST
-    url: /brcli-gateway/brcli-bff-mobile/primeiro-acesso
+    url: /brcli-gateway/primeiro-acesso
   response:
     latency: 2500
     status: 200

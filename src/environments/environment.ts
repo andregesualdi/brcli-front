@@ -3,18 +3,19 @@ export const environment = {
     verbose: true,
 
     api: {
-        context: '/brcli-gateway/brcli-bff-mobile',
+        context: '/brcli-gateway',
         endpoints: {
-            alterarImagem: '/alterar-imagem',
-            avaliacaoFisica: '/avaliacao-fisica',
+            alterarImagem: '/api/mobile/paciente',
+            agendamento: '/api/mobile/agendamento',
+            avaliacaoFisica: '/api/mobile/avaliacao',
             cadastroPaciente: '/cadastro-paciente',
-            dadosPaciente: '/dados-paciente',
+            dadosPaciente: '/api/mobile/paciente',
             login: '/login',
-            metas: '/metas',
-            planoAlimentar: '/plano-alimentar',
+            metas: '/api/mobile/metas',
+            planoAlimentar: '/api/mobile/plano-alimentar',
             primeiroAcesso: '/primeiro-acesso',
             recuperarSenha: '/recuperar-senha',
-            salvarMetas: '/salvar-metas'
+            salvarMetas: '/api/mobile/metas'
         }
     }
 }
