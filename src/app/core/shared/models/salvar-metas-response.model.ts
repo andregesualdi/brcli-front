@@ -1,3 +1,3 @@
 export class SalvarMetasResponse {
-    public salvo: boolean | undefined;
+    public success: boolean | undefined;
 }

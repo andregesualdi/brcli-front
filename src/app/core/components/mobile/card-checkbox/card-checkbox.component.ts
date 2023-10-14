@@ -29,7 +29,7 @@ export class CardCheckboxComponent implements OnInit {
   public selecionarCheckbox(event: any, meta: any): void {
     const formArray: FormArray = this.form?.get('metas') as FormArray;
     formArray.push(new FormControl(
-      { descricao: meta.descricao, atingida: meta.atingida }
+      { descricao: meta.descricaoMeta, atingida: meta.atingida }
     ));
 
     if (event.target.checked) {

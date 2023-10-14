@@ -58,7 +58,7 @@ export class MetasComponent implements OnInit {
     this.dados.salvarMetas(this.planoMetas).subscribe(
       {
         next: (data: SalvarMetasResponse) => {
-          if (data && data.salvo) {
+          if (data && data.success) {
             this.metasNaoAlteradas = true;
             this.loadingSalvarMetas = false;
             this.preencherSucesso();

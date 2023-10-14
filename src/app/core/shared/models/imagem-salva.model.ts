@@ -1,3 +1,3 @@
 export class ImagemSalva {
-    public imagemSalva: boolean | undefined;
+    public success: boolean | undefined;
 }

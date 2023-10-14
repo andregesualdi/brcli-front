@@ -90,7 +90,7 @@ export class PerfilComponent implements OnInit {
     this.dados.salvarImagemPaciente(this.paciente as Paciente).subscribe(
       {
         next: (data: ImagemSalva) => {
-          if (data && data.imagemSalva) {
+          if (data && data.success) {
             this.loading = false;
           } else {
             this.arquivo = '';

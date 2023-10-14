@@ -23,7 +23,7 @@ export class DadosService {
     const headers = new HttpHeaders().set(
       'Content-type', 'application/json'
     );
-    headers.append('x-usuario', usuario);
+    headers.append('codigo-paciente', usuario);
     return this.rest.get(environment.api.endpoints.planoAlimentar,
       headers);
   }
@@ -32,7 +32,7 @@ export class DadosService {
     const headers = new HttpHeaders().set(
       'Content-type', 'application/json'
     );
-    headers.append('x-usuario', usuario);
+    headers.append('codigo-paciente', usuario);
     return this.rest.get(environment.api.endpoints.metas,
       headers);
   }
@@ -47,7 +47,7 @@ export class DadosService {
     const headers = new HttpHeaders().set(
       'Content-type', 'application/json'
     );
-    headers.append('x-usuario', usuario);
+    headers.append('codigo-paciente', usuario);
     return this.rest.get(environment.api.endpoints.avaliacaoFisica,
       headers);
   }
@@ -56,7 +56,7 @@ export class DadosService {
     const headers = new HttpHeaders().set(
       'Content-type', 'application/json'
     );
-    headers.append('x-usuario', usuario);
+    headers.append('codigo-paciente', usuario);
     return this.rest.get(environment.api.endpoints.dadosPaciente,
       headers);
   }
