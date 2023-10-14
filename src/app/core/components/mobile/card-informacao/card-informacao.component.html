@@ -19,7 +19,7 @@
             </div>
         </div>
         <ng-template #informativo>
-            {{ texto }}
+            <div [innerHtml]="texto"></div>
         </ng-template>
     </div>
     <div class="card-informativo__seta" *ngIf="direcionador"></div>

@@ -11,7 +11,7 @@
     },
     "PLANO_ALIMENTAR": {
         "TITULO": "Meu plano alimentar",
-        "TEXTO_AGENDAMENTO": "Seu próximo agendamento é dia {{dia}}, às {{hora}}.",
+        "TEXTO_AGENDAMENTO": "Seu próximo agendamento é dia <strong>{{dia}}, às {{hora}}</strong>.",
         "SEM_AGENDAMENTO": "Você não possui agendamento marcado.",
         "CAFE": "Café da manhã",
         "LANCHEMANHA": "Lanche da manhã",
