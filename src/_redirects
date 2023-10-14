@@ -1,2 +1,3 @@
 # Redirects from what the browser requests to what we serve
 /* /index.html 200
+/brcli-gateway/* https://brcli-gateway-production.up.railway.app/:splat 200
