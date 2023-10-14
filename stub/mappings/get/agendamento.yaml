@@ -1,0 +1,9 @@
+- request:
+    method: GET
+    url: /brcli-gateway/api/mobile/agendamento
+  response:
+    latency: 3000
+    status: 200
+    headers:
+      content-type: application/json
+    file: '../../mocks/agendamento.json'

@@ -3,6 +3,8 @@ import { PlanoMetas } from '../../../../shared/models/plano-metas.model';
 import { DadosService } from '../../../../services/dados.service';
 import { SalvarMetasResponse } from '../../../../shared/models/salvar-metas-response.model';
 import { TranslateService } from '@ngx-translate/core';
+import { AcessoService } from '../../../../services/acesso.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-metas',
@@ -22,7 +24,9 @@ export class MetasComponent implements OnInit {
 
   constructor (
     private dados: DadosService,
-    private translate: TranslateService
+    private translate: TranslateService,
+    private acessoService: AcessoService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -40,7 +44,7 @@ export class MetasComponent implements OnInit {
 
   public metaAlterada(event: any): void {
     this.planoMetas.metas = this.planoMetas.metas?.map((obj) => {
-      if (obj.descricao === event.descricao) {
+      if (obj.descricaoMeta === event.descricaoMeta) {
         return {...obj, atingida: event.atingida};
       }
       return obj;
@@ -102,12 +106,7 @@ export class MetasComponent implements OnInit {
   }
 
   private recuperarMetas(): void {
-    const usuario = String(window.sessionStorage.getItem('usuario'));
-    if (!usuario || usuario === '' || usuario === 'null' || usuario === 'undefined') {
-      this.loading = false;
-      this.erro = true;
-    } else {
-      this.dados.recuperarMetas(usuario).subscribe(
+   this.dados.recuperarMetas().subscribe(
         {
           next: (data: PlanoMetas) => {
             if (data) {
@@ -124,6 +123,5 @@ export class MetasComponent implements OnInit {
           }
         }
       )
-    }
   }
 }

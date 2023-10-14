@@ -25,6 +25,7 @@ import { LoginComponent } from './core/modules/mobile/pages/login/login.componen
 import { EsqueciSenhaComponent } from './core/modules/mobile/pages/esqueci-senha/esqueci-senha.component';
 import { PrimeiroAcessoComponent } from './core/modules/mobile/pages/primeiro-acesso/primeiro-acesso.component';
 import { InputTextoComponent } from './core/components/mobile/input-texto/input-texto.component';
+import { AuthInterceptor } from './core/interceptors/auth.interceptor';
 
 registerLocaleData(ptBr);
 
@@ -62,7 +63,12 @@ registerLocaleData(ptBr);
     })
   ],
   providers: [
-    { provide: LOCALE_ID, useValue: 'pt' }
+    { provide: LOCALE_ID, useValue: 'pt' },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })

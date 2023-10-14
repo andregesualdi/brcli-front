@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import * as moment from 'moment-timezone';
 
 @Component({
   selector: 'app-root',

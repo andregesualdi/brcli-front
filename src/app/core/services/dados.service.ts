@@ -9,6 +9,7 @@ import { SalvarMetasResponse } from '../shared/models/salvar-metas-response.mode
 import { AvaliacaoFisica } from '../shared/models/avaliacao.model';
 import { Paciente } from '../shared/models/paciente.model';
 import { ImagemSalva } from '../shared/models/imagem-salva.model';
+import { Agendamento } from '../shared/models/agendamento.model';
 
 @Injectable({
   providedIn: 'root'
@@ -19,44 +20,48 @@ export class DadosService {
     private rest: RestService
   ) { }
 
-  public recuperarPlano(usuario: string): Observable<PlanoAlimentar> {
+  public recuperarPlano(): Observable<PlanoAlimentar> {
     const headers = new HttpHeaders().set(
       'Content-type', 'application/json'
     );
-    headers.append('codigo-paciente', usuario);
     return this.rest.get(environment.api.endpoints.planoAlimentar,
       headers);
   }
 
-  public recuperarMetas(usuario: string): Observable<PlanoMetas> {
+  public recuperarAgendamento(): Observable<Agendamento> {
     const headers = new HttpHeaders().set(
       'Content-type', 'application/json'
     );
-    headers.append('codigo-paciente', usuario);
+    return this.rest.get(environment.api.endpoints.agendamento,
+      headers);
+  }
+
+  public recuperarMetas(): Observable<PlanoMetas> {
+    const headers = new HttpHeaders().set(
+      'Content-type', 'application/json'
+    );
     return this.rest.get(environment.api.endpoints.metas,
       headers);
   }
 
   public salvarMetas(metas: PlanoMetas): Observable<SalvarMetasResponse> {
-    return this.rest.put(environment.api.endpoints.salvarMetas,
+    return this.rest.post(environment.api.endpoints.salvarMetas,
       metas,
       new HttpHeaders().set('Content-type', 'application/json'));
   }
 
-  public recuperarAvaliacao(usuario: string): Observable<AvaliacaoFisica> {
+  public recuperarAvaliacao(): Observable<AvaliacaoFisica> {
     const headers = new HttpHeaders().set(
       'Content-type', 'application/json'
     );
-    headers.append('codigo-paciente', usuario);
     return this.rest.get(environment.api.endpoints.avaliacaoFisica,
       headers);
   }
   
-  public recuperarDadosPaciente(usuario: string): Observable<Paciente> {
+  public recuperarDadosPaciente(): Observable<Paciente> {
     const headers = new HttpHeaders().set(
       'Content-type', 'application/json'
     );
-    headers.append('codigo-paciente', usuario);
     return this.rest.get(environment.api.endpoints.dadosPaciente,
       headers);
   }

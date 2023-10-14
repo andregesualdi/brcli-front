@@ -3,15 +3,15 @@
     "data": 1695605398000,
     "metas": [
         {
-            "descricao": "Comer frutas duas vezes por dia",
+            "descricaoMeta": "Comer frutas duas vezes por dia",
             "atingida": false
         },
         {
-            "descricao": "Ir à academia quatro vezes por semana",
+            "descricaoMeta": "Ir à academia quatro vezes por semana",
             "atingida": true
         },
         {
-            "descricao": "Beber dois litros de água",
+            "descricaoMeta": "Beber dois litros de água",
             "atingida": true
         }
     ]

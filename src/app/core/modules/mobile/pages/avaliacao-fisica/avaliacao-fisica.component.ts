@@ -3,6 +3,7 @@ import * as FileSaver from 'file-saver';
 import { DadosService } from '../../../../services/dados.service';
 import { AvaliacaoFisica } from '../../../../shared/models/avaliacao.model';
 import { ArquivoUtils } from '../../../../shared/utils/arquivo.utils';
+import { AcessoService } from '../../../../services/acesso.service';
 
 @Component({
   selector: 'app-avaliacao-fisica',
@@ -15,7 +16,8 @@ export class AvaliacaoFisicaComponent implements OnInit {
   public avaliacaoFisica: AvaliacaoFisica = new AvaliacaoFisica;
 
   constructor(
-    private dados: DadosService
+    private dados: DadosService,
+    private acessoService: AcessoService
   ) { }
 
   ngOnInit(): void {
@@ -28,27 +30,21 @@ export class AvaliacaoFisicaComponent implements OnInit {
 
   private recuperarAvaliacaoFisica(): void {
     this.loading = true;
-    const usuario = String(window.sessionStorage.getItem('usuario'));
-    if (!usuario || usuario === '' || usuario === 'null' || usuario === 'undefined') {
-      this.loading = false;
-      this.erro = true;
-    } else {
-      this.dados.recuperarAvaliacao(usuario).subscribe(
-        {
-          next: (data: AvaliacaoFisica) => {
-            if (data && data.arquivo !== '') {
-              this.avaliacaoFisica = data;
-            } else {
-              this.erro = true;
-            }
-            this.loading = false;
-          },
-          error: () => {
+    this.dados.recuperarAvaliacao().subscribe(
+      {
+        next: (data: AvaliacaoFisica) => {
+          if (data && data.arquivo !== '') {
+            this.avaliacaoFisica = data;
+          } else {
             this.erro = true;
-            this.loading = false;
           }
+          this.loading = false;
+        },
+        error: () => {
+          this.erro = true;
+          this.loading = false;
         }
-      )
-    }
+      }
+    )
   }
 }

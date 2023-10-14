@@ -52,14 +52,11 @@ export class LoginComponent {
         next: (data: Login) => {
         if (data.authorized) {
           if (data.userType === "paciente") {
-            window.sessionStorage.setItem('usuario', this.login); // Melhorar este ponto, acesso perigoso, analisar outras formas
+            this.acessoService.sessao(data);
             this.loading = false;
             this.router.navigate(['plano-alimentar']);
           } else if (data.userType === "nutricionista") {
             this.nutricionista = true;
-          } else {
-            this.usuarioInvalido = true;
-            this.avisoUsuarioInvalido();
           }
           this.loading = false;
         } else {
@@ -68,8 +65,13 @@ export class LoginComponent {
           this.avisoUsuarioInvalido();
         }
         },
-        error: () => {
-          this.erro = true;
+        error: (error) => {
+          if (error.status === 403) {
+            this.usuarioInvalido = true;
+            this.avisoUsuarioInvalido();
+          } else {
+            this.erro = true;
+          }
           this.loading = false;
         }
       }
