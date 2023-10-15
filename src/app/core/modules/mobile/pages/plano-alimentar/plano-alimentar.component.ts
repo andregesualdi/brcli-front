@@ -69,7 +69,7 @@ export class PlanoAlimentarComponent implements OnInit {
           }
         },
         error: (error) => {
-          if (error.code === "BRCLI404") {
+          if (error.error.code === "BRCLI404") {
             this.agendamento = new Agendamento;
             this.recuperarPlano();
           } else {
