@@ -58,9 +58,16 @@ export class PrimeiroAcessoComponent {
           }
           this.loading = false;
         },
-        error: () => {
-          this.erro = true;
-          this.loading = false;
+        error: (error) => {
+          if (error.error.code === 403) {
+            this.codigoValido = false;
+            this.erroCodigoInvalido = true;
+            alert('Código inválido');
+            this.loading = false;
+          } else {
+            this.erro = true;
+            this.loading = false;
+          }
         }
       }
     );
